@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14151a">
+<title>500 Ide Konten What If · Stickman Putih</title>
+<meta name="description" content="500 ide konten YouTube format What If (Bagaimana jika) dengan terjemahan Indonesia. Tandai yang sudah diposting.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="WhatIf 500">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Nunito:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#14151a; --bar:rgba(20,21,26,.86); --card:#1c1e27; --card-done:#16271f;
+  --ink:#f4f1ea; --muted:#a9a69c; --line:#f4f1ea; --accent:#ffd23f; --ok:#5ef2c0; --danger:#ff6b6b;
+  --dots:rgba(255,255,255,.07); --soft:rgba(255,255,255,.07);
+  --f-head:'Caveat Brush','Segoe Print','Comic Sans MS',cursive;
+  --f-hand:'Patrick Hand','Segoe Print','Comic Sans MS',cursive;
+  --f-body:'Nunito',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:dark;
+}
+[data-theme="light"]{
+  --bg:#f5efdc; --bar:rgba(245,239,220,.9); --card:#fffdf5; --card-done:#e6f6ec;
+  --ink:#1d1b16; --muted:#6a6556; --line:#1d1b16; --accent:#ff5a36; --ok:#0c8c5e; --danger:#d93636;
+  --dots:rgba(30,60,160,.10); --soft:rgba(0,0,0,.06);
+  color-scheme:light;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:var(--f-body);min-height:100vh;
+  background:radial-gradient(circle at 1px 1px,var(--dots) 1.2px,transparent 0) 0 0/26px 26px,var(--bg);
+  transition:background-color .3s,color .3s;
+}
+[data-theme="light"] body{
+  background:
+    linear-gradient(90deg,transparent 54px,rgba(220,60,60,.35) 54px 56px,transparent 56px),
+    repeating-linear-gradient(transparent 0 31px,var(--dots) 31px 32px),var(--bg);
+}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 18px}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:26px 0 10px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;align-items:center}
+.hero-man{width:190px;height:auto;color:var(--ink);overflow:visible}
+.hero-man .arm{transform-origin:70px 88px;animation:think 3.2s ease-in-out infinite}
+.hero-man .bubble{animation:floaty 3.6s ease-in-out infinite;transform-origin:150px 60px}
+.hero-man .head{animation:bob 3.2s ease-in-out infinite;transform-origin:70px 130px}
+@keyframes think{0%,100%{transform:rotate(0)}50%{transform:rotate(-6deg)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+@keyframes bob{0%,100%{transform:rotate(0)}50%{transform:rotate(3deg)}}
+.kicker{font-family:var(--f-hand);color:var(--muted);font-size:18px;letter-spacing:.04em;margin:0}
+h1{font-family:var(--f-head);font-weight:400;margin:.05em 0 .12em;line-height:.95;font-size:clamp(46px,8.4vw,104px);letter-spacing:.01em}
+h1 .q{color:var(--accent);display:inline-block;transform:rotate(8deg);text-shadow:3px 3px 0 var(--soft)}
+h1 .u{position:relative;white-space:nowrap}
+h1 .u::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-.04em;height:.14em;background:var(--accent);border-radius:99px;transform:rotate(-1.4deg);opacity:.9}
+.lead{margin:0;max-width:52ch;color:var(--muted);font-size:clamp(14px,2.1vw,17px);line-height:1.5}
+.lead b{color:var(--ink)}
+.hero-actions{position:absolute;right:0;top:18px;display:flex;gap:8px}
+.icon-btn{width:44px;height:44px;border:2px solid var(--line);border-radius:14px 6px 16px 6px/6px 16px 6px 14px;display:grid;place-items:center;background:var(--card);font-size:20px;transition:transform .15s,box-shadow .15s;box-shadow:3px 3px 0 var(--accent)}
+.icon-btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--accent)}
+.icon-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--accent)}
+.menu{position:relative}
+.menu-pop{position:absolute;right:0;top:54px;min-width:250px;background:var(--card);border:2px solid var(--line);border-radius:16px 6px 18px 8px/8px 18px 6px 16px;padding:8px;z-index:60;box-shadow:6px 6px 0 var(--accent);display:none}
+.menu-pop.open{display:block;animation:pop .18s ease-out}
+.menu-pop button{display:flex;gap:10px;align-items:center;width:100%;text-align:left;padding:11px 12px;border-radius:10px;font-size:15px;font-weight:600}
+.menu-pop button:hover{background:var(--soft)}
+.menu-pop [hidden]{display:none}
+.menu-pop hr{border:0;border-top:2px dashed var(--soft);margin:6px 0}
+.menu-pop .danger{color:var(--danger)}
+
+/* ---------- PROGRESS ---------- */
+.progress{margin:18px 0 8px;padding:16px 18px 18px;border:2px solid var(--line);background:var(--card);
+  border-radius:22px 8px 24px 8px/8px 24px 8px 22px;box-shadow:6px 6px 0 var(--accent)}
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-bottom:6px}
+.big{font-family:var(--f-head);font-size:clamp(34px,6vw,54px);line-height:1}
+.big small{font-size:.5em;color:var(--muted);margin-left:2px}
+.stat{font-size:14px;color:var(--muted);font-weight:600}
+.stat b{color:var(--ink);font-size:17px;font-family:var(--f-hand);font-weight:400}
+.stat .ok{color:var(--ok)}
+.track{position:relative;height:56px;margin:4px 6px 0}
+.track-line{position:absolute;left:0;right:0;bottom:8px;height:0;border-top:3px dashed var(--muted);opacity:.55}
+.track-fill{position:absolute;left:0;bottom:8px;height:6px;margin-bottom:-3px;border-radius:99px;background:var(--ok);width:0;transition:width .7s cubic-bezier(.3,1.3,.5,1)}
+.walker{position:absolute;bottom:6px;left:0;width:30px;transform:translateX(-50%);transition:left .7s cubic-bezier(.3,1.3,.5,1);color:var(--ink)}
+.walker .l1,.walker .l2{transform-origin:20px 36px;animation:walk .55s ease-in-out infinite alternate}
+.walker .l2{animation-delay:-.275s;animation-direction:alternate-reverse}
+.walker .a1,.walker .a2{transform-origin:20px 22px;animation:walk .55s ease-in-out infinite alternate-reverse}
+.walker .a2{animation-delay:-.275s}
+@keyframes walk{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}
+.flag{position:absolute;right:-4px;bottom:8px;width:34px;height:46px;color:var(--ink)}
+.flag .cloth{fill:var(--accent);stroke:var(--ink)}
+.milestones{display:flex;justify-content:space-between;font-family:var(--f-hand);color:var(--muted);font-size:14px;margin:2px 4px 0}
+
+/* ---------- TOOLBAR ---------- */
+.toolbar{position:sticky;top:0;z-index:40;margin:14px -18px 0;padding:10px 18px;background:var(--bar);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:2px dashed var(--soft)}
+.toolbar-in{max-width:1204px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search{flex:1 1 260px;position:relative}
+.search input{width:100%;height:46px;padding:0 42px 0 44px;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:14px 6px 16px 6px/6px 16px 6px 14px;outline:none}
+.search input:focus{box-shadow:3px 3px 0 var(--accent)}
+.search .mag{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none}
+.search .clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;font-size:18px;color:var(--muted);display:none}
+.search.has .clr{display:block}
+.seg{display:flex;border:2px solid var(--line);border-radius:14px 6px 16px 6px/6px 16px 6px 14px;overflow:hidden;background:var(--card)}
+.seg button{padding:0 14px;height:42px;font-weight:700;font-size:14.5px;white-space:nowrap;border-right:2px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button em{font-style:normal;font-family:var(--f-hand);opacity:.7;margin-left:4px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#16161a}
+.count{font-size:13.5px;color:var(--muted);font-weight:600;margin-left:auto}
+
+/* ---------- CATEGORY CHIPS ---------- */
+.chips{display:flex;gap:10px;overflow-x:auto;padding:16px 18px 8px;margin:0 -18px;scrollbar-width:thin;scroll-snap-type:x proximity}
+.chip{flex:none;scroll-snap-align:start;display:flex;align-items:center;gap:8px;padding:8px 14px 8px 10px;border:2px solid var(--line);border-radius:99px;background:var(--card);font-weight:700;font-size:14px;transition:transform .15s,background .15s;position:relative;overflow:hidden}
+.chip:hover{transform:translateY(-2px)}
+.chip .emo{font-size:18px}
+.chip .n{font-family:var(--f-hand);font-weight:400;color:var(--muted);font-size:14px}
+.chip .bar{position:absolute;left:0;bottom:0;height:4px;background:var(--c,var(--ok));width:0;transition:width .5s}
+.chip[aria-pressed="true"]{background:var(--c,var(--accent));color:#16161a;border-color:var(--ink)}
+.chip[aria-pressed="true"] .n{color:#16161a;opacity:.7}
+.chip[aria-pressed="true"] .bar{background:#16161a}
+
+/* ---------- SECTIONS & CARDS ---------- */
+main{padding-bottom:120px}
+.cat{margin-top:34px}
+.cat[hidden]{display:none}
+.cat-head{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:4px 0}
+.cat-head .emo{font-size:clamp(28px,5vw,40px);filter:drop-shadow(3px 3px 0 var(--c))}
+.cat-title{display:flex;flex-direction:column;min-width:0;flex:1}
+.cat-name{font-family:var(--f-head);font-size:clamp(26px,4.4vw,38px);line-height:1;letter-spacing:.01em}
+.cat-sub{font-size:13.5px;color:var(--muted);font-weight:600;margin-top:2px}
+.cat-cnt{font-family:var(--f-hand);font-size:20px;white-space:nowrap}
+.cat-cnt b{color:var(--c);font-weight:400}
+.chev{transition:transform .25s;font-size:18px;color:var(--muted)}
+.cat.collapsed .chev{transform:rotate(-90deg)}
+.cat.collapsed .grid{display:none}
+.mini{height:6px;border-radius:99px;background:var(--soft);margin:8px 0 18px;overflow:hidden}
+.mini i{display:block;height:100%;width:0;background:var(--c);border-radius:99px;transition:width .5s}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px 20px}
+.card{
+  position:relative;display:flex;flex-direction:column;gap:6px;padding:14px 16px 14px;
+  background:var(--card);border:2.5px solid var(--line);
+  border-radius:18px 6px 20px 8px/8px 20px 6px 18px;box-shadow:5px 5px 0 var(--c);
+  transition:transform .18s,box-shadow .18s,background .3s,opacity .3s;scroll-margin-top:150px;
+  content-visibility:auto;contain-intrinsic-size:auto 190px;
+}
+.card:nth-child(3n+2){border-radius:8px 20px 6px 18px/18px 6px 20px 8px}
+.card:nth-child(3n){border-radius:20px 8px 18px 6px/6px 18px 8px 20px}
+.card:hover{transform:translate(-2px,-2px) rotate(-.3deg);box-shadow:8px 8px 0 var(--c)}
+.card[hidden]{display:none}
+.card-top{display:flex;align-items:center;justify-content:flex-start;gap:10px;min-height:26px;font-family:var(--f-hand);font-size:15px;color:var(--muted)}
+.num{letter-spacing:.06em}
+.badge{font-size:12.5px;padding:1px 9px;border:2px dashed var(--c);border-radius:99px;color:var(--ink);background:var(--soft)}
+.en{margin:2px 0 0;font-family:var(--f-hand);font-weight:400;font-size:clamp(20px,2.6vw,23px);line-height:1.2}
+.en .wi{color:var(--c);font-family:var(--f-head);letter-spacing:.02em;margin-right:.18em;white-space:nowrap}
+.idn{margin:0;font-style:italic;color:var(--muted);font-size:14.5px;line-height:1.4;flex:1}
+body.hide-id .idn{display:none}
+.card-foot{display:flex;gap:8px;margin-top:10px;align-items:stretch}
+.copy{flex:none;width:44px;border:2px solid var(--line);border-radius:12px;display:grid;place-items:center;font-size:17px;background:transparent;transition:background .15s}
+.copy:hover{background:var(--soft)}
+.mark{flex:1;display:flex;align-items:center;gap:10px;min-height:44px;padding:4px 12px 4px 8px;border:2px dashed var(--muted);border-radius:12px;font-weight:700;font-size:14px;text-align:left;transition:all .2s;color:var(--muted)}
+.mark:hover{border-style:solid;border-color:var(--ink);color:var(--ink)}
+.box{flex:none;width:28px;height:28px;border:2.5px solid currentColor;border-radius:8px 4px 9px 4px/4px 9px 4px 8px;display:grid;place-items:center;background:transparent;transition:all .2s}
+.box svg{width:20px;height:20px;stroke:#0d0e12;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;transition:stroke-dashoffset .3s .05s}
+.mark .lbl small{display:block;font-weight:600;opacity:.8;font-size:11.5px;margin-top:-1px}
+.mark .lbl small:empty{display:none}
+.card.done{background:var(--card-done);box-shadow:5px 5px 0 var(--ok)}
+.card.done .en{text-decoration:line-through;text-decoration-thickness:2.5px;text-decoration-color:var(--ok);opacity:.7}
+.card.done .idn{opacity:.6}
+.card.done .mark{border:2px solid var(--ok);color:var(--ok);background:rgba(94,242,192,.08)}
+[data-theme="light"] .card.done .mark{background:rgba(12,140,94,.08)}
+.card.done .box{background:var(--ok);border-color:var(--ok);animation:pop .35s}
+.card.done .box svg{stroke-dashoffset:0}
+.stamp{position:absolute;right:12px;top:9px;font-family:var(--f-head);font-size:19px;line-height:1.25;color:var(--ok);border:3px double var(--ok);padding:0 8px;border-radius:6px;transform:rotate(-7deg) scale(2.2);opacity:0;pointer-events:none;letter-spacing:.06em;background:transparent;transition:none}
+.card.done .stamp{opacity:.95;transform:rotate(-7deg) scale(1);transition:transform .32s cubic-bezier(.3,1.6,.5,1),opacity .15s}
+.card.flash{animation:flash 1.8s ease-out}
+@keyframes flash{0%,30%{box-shadow:0 0 0 6px var(--accent),5px 5px 0 var(--c)}100%{box-shadow:5px 5px 0 var(--c)}}
+@keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+
+/* ---------- EMPTY / FAB / TOAST / MODAL ---------- */
+.empty{display:none;text-align:center;padding:60px 10px;color:var(--muted)}
+.empty.show{display:block}
+.empty svg{width:120px;color:var(--ink);margin-bottom:6px}
+.empty h3{font-family:var(--f-head);font-weight:400;font-size:30px;margin:0;color:var(--ink)}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:45;height:56px;padding:0 20px 0 16px;display:flex;align-items:center;gap:8px;background:var(--accent);color:#16161a;font-weight:800;font-size:16px;border:2.5px solid var(--ink);border-radius:18px 8px 20px 8px/8px 20px 8px 18px;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.fab:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.fab:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.fab .dice{font-size:22px;display:inline-block}
+.fab:hover .dice{animation:roll .6s}
+@keyframes roll{to{transform:rotate(360deg)}}
+.toast-box{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:80;display:flex;flex-direction:column;gap:8px;align-items:center;width:max-content;max-width:calc(100vw - 32px)}
+.toast{display:flex;gap:14px;align-items:center;padding:11px 16px;background:var(--ink);color:var(--bg);border-radius:14px;font-weight:700;font-size:14.5px;box-shadow:0 8px 28px rgba(0,0,0,.35);animation:pop .22s}
+.toast button{color:var(--accent);font-weight:800;text-decoration:underline}
+[data-theme="light"] .toast button{color:#ffb199}
+.modal{position:fixed;inset:0;z-index:90;display:none;place-items:center;padding:18px;background:rgba(5,6,9,.66);backdrop-filter:blur(4px)}
+.modal.open{display:grid;animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.sheet{width:min(560px,100%);background:var(--card);border:3px solid var(--line);border-radius:24px 8px 26px 8px/8px 26px 8px 24px;padding:22px 22px 20px;box-shadow:8px 8px 0 var(--c,var(--accent));position:relative;animation:pop .28s cubic-bezier(.3,1.5,.5,1)}
+.sheet .tag{font-family:var(--f-hand);color:var(--muted);font-size:17px;margin:0 0 4px}
+.sheet h2{font-family:var(--f-hand);font-weight:400;font-size:clamp(26px,5.4vw,34px);line-height:1.15;margin:0 0 6px}
+.sheet h2 .wi{color:var(--c,var(--accent));font-family:var(--f-head)}
+.sheet p.idn{font-size:16px;margin:0 0 18px}
+.sheet .row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{height:46px;padding:0 18px;border:2px solid var(--line);border-radius:12px;font-weight:800;font-size:15px;background:transparent;transition:transform .12s}
+.btn:active{transform:scale(.96)}
+.btn.primary{background:var(--accent);color:#16161a}
+.btn.ok{background:var(--ok);color:#0d0e12;border-color:var(--ok)}
+.sheet .x{position:absolute;right:10px;top:10px;width:38px;height:38px;border-radius:50%;font-size:20px;color:var(--muted)}
+canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:100}
+footer.foot{text-align:center;color:var(--muted);font-size:13px;padding:10px 0 40px;font-family:var(--f-hand);font-size:16px}
+kbd{font-family:var(--f-hand);padding:0 6px;border:2px solid var(--muted);border-radius:6px;font-size:13px}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:820px){
+  .hero{grid-template-columns:1fr;text-align:left;padding-top:116px}
+  .hero-man{position:absolute;right:0;top:10px;width:118px;opacity:.95}
+  .hero-actions{right:auto;left:0;top:14px}
+  .menu-pop{right:auto;left:0}
+}
+@media(max-width:560px){
+  .wrap{padding:0 14px}
+  .toolbar{margin:12px -14px 0;padding:8px 14px}
+  .chips{margin:0 -14px;padding:12px 14px 6px}
+  .grid{grid-template-columns:1fr;gap:18px}
+  .search{flex:1 1 100%}.search input{height:42px}.seg button{height:38px}
+  .seg{flex:1}.seg button{flex:1;padding:0 6px;font-size:13.5px}
+  .count{display:none}
+  .progress{padding:14px 14px 16px}
+  .stats{gap:6px 16px}
+  .fab{height:54px;padding:0 18px 0 14px}
+  .card{scroll-margin-top:130px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-actions">
+      <button class="icon-btn" id="themeBtn" title="Ganti tema" aria-label="Ganti tema">🌙</button>
+      <div class="menu">
+        <button class="icon-btn" id="menuBtn" title="Menu" aria-label="Menu" aria-haspopup="true">⋯</button>
+        <div class="menu-pop" id="menuPop" role="menu">
+          <button data-act="install" id="installBtn" hidden><span>📲</span><span>Pasang sebagai aplikasi</span></button>
+          <hr id="installHr" hidden>
+          <button data-act="toggleId"><span>🇮🇩</span><span id="idLbl">Sembunyikan terjemahan</span></button>
+          <button data-act="collapseAll"><span>📚</span><span>Lipat / buka semua tema</span></button>
+          <hr>
+          <button data-act="copyTodo"><span>📋</span><span>Salin daftar yang belum tayang</span></button>
+          <button data-act="export"><span>💾</span><span>Cadangkan progres (file)</span></button>
+          <button data-act="import"><span>📂</span><span>Pulihkan progres dari file</span></button>
+          <hr>
+          <button data-act="reset" class="danger"><span>🗑️</span><span>Reset semua tanda</span></button>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-man" viewBox="0 0 230 200" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <g class="head"><circle cx="70" cy="50" r="23"/><circle cx="61" cy="46" r="2.6" fill="currentColor" stroke="none"/><circle cx="79" cy="46" r="2.6" fill="currentColor" stroke="none"/><path d="M63 58q7 5 14 0" stroke-width="4"/></g>
+      <path d="M70 74V132"/><path d="M70 132L48 188M70 132L94 188"/>
+      <path d="M70 90L42 118"/>
+      <g class="arm"><path d="M70 90L100 106L82 72"/></g>
+      <g class="bubble">
+        <circle cx="98" cy="30" r="3.5" stroke-width="3"/><circle cx="110" cy="18" r="5.5" stroke-width="3"/>
+        <path d="M128 52c-14 0-20-18-6-24 6-14 28-14 36-2 16-6 34 4 28 20 14 8 6 28-12 26-6 10-24 10-30 0-8 4-18 0-16-20z" stroke="var(--accent)" stroke-width="4"/>
+        <text x="156" y="64" font-family="Caveat Brush,Comic Sans MS,cursive" font-size="50" fill="var(--accent)" stroke="none" text-anchor="middle">?</text>
+      </g>
+    </svg>
+
+    <div>
+      <p class="kicker">✎ planner konten · gaya stickman putih · 5–8 menit</p>
+      <h1><span class="u">What If</span><span class="q">?</span><br>500 Ide Video</h1>
+      <p class="lead">Kumpulan <b>500 judul “Bagaimana jika”</b> dalam 10 tema, lengkap dengan terjemahan Indonesia. Tandai yang <b>sudah tayang</b>, sisanya tinggal diacak dan dieksekusi.</p>
+    </div>
+  </header>
+
+  <section class="progress" aria-label="Progres posting">
+    <div class="stats">
+      <div class="big"><span id="doneBig">0</span><small>/ <span id="totalBig">500</span> tayang</small></div>
+      <div class="stat">Persentase <b id="pct">0%</b></div>
+      <div class="stat">Sisa <b id="left">500</b> judul</div>
+      <div class="stat" id="eta"></div>
+    </div>
+    <div class="track" id="track">
+      <div class="track-line"></div><div class="track-fill" id="fill"></div>
+      <svg class="walker" id="walker" viewBox="0 0 40 56" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" aria-hidden="true">
+        <circle cx="20" cy="9" r="7"/><path d="M20 16V36"/>
+        <path class="a1" d="M20 22L10 31"/><path class="a2" d="M20 22L30 31"/>
+        <path class="l1" d="M20 36L12 52"/><path class="l2" d="M20 36L28 52"/>
+      </svg>
+      <svg class="flag" viewBox="0 0 34 46" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 44V4"/><path class="cloth" d="M6 5h22l-6 8 6 8H6z"/></svg>
+    </div>
+    <div class="milestones"><span>mulai</span><span>100</span><span>250</span><span>500 🏁</span></div>
+  </section>
+
+  <div class="toolbar">
+    <div class="toolbar-in">
+      <label class="search" id="searchBox">
+        <span class="mag">🔍</span>
+        <input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Cari judul… (Inggris / Indonesia)" aria-label="Cari judul">
+        <button class="clr" id="clr" aria-label="Hapus pencarian" type="button">✕</button>
+      </label>
+      <div class="seg" id="seg" role="group" aria-label="Filter status">
+        <button data-f="all" aria-pressed="true">Semua<em id="cAll"></em></button>
+        <button data-f="todo" aria-pressed="false">Belum<em id="cTodo"></em></button>
+        <button data-f="done" aria-pressed="false">Sudah<em id="cDone"></em></button>
+      </div>
+      <span class="count" id="shown"></span>
+    </div>
+  </div>
+
+  <nav class="chips" id="chips" aria-label="Tema"></nav>
+
+  <main id="list"></main>
+
+  <div class="empty" id="empty">
+    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="30" r="14"/><circle cx="55" cy="28" r="2" fill="currentColor" stroke="none"/><circle cx="66" cy="28" r="2" fill="currentColor" stroke="none"/><path d="M54 37h12"/><path d="M60 44V80M60 80L44 112M60 80L76 112"/><path d="M60 54L36 46M60 54L84 46"/></svg>
+    <h3>Hmm, gak ada yang cocok</h3>
+    <p>Coba kata kunci lain atau ganti filter di atas.</p>
+  </div>
+
+  <footer class="foot">Tanda tersimpan otomatis di browser ini · tekan <kbd>/</kbd> untuk mencari</footer>
+</div>
+
+<button class="fab" id="fab" aria-label="Acak judul berikutnya"><span class="dice">🎲</span><span>Acak judul</span></button>
+<div class="toast-box" id="toasts" aria-live="polite"></div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="sheet" id="sheet">
+    <button class="x" id="mClose" aria-label="Tutup">✕</button>
+    <p class="tag" id="mTag"></p>
+    <h2 id="mTitle"></h2>
+    <p class="idn" id="mId"></p>
+    <div class="row">
+      <button class="btn ok" id="mDone">✓ Tandai sudah tayang</button>
+      <button class="btn primary" id="mAgain">🎲 Acak lagi</button>
+      <button class="btn" id="mCopy">⧉ Salin</button>
+      <button class="btn" id="mGo">Lihat di daftar</button>
+    </div>
+  </div>
+</div>
+<input type="file" id="file" accept="application/json,.json" hidden>
+
+<script>
+const CATS = [{"emo": "🧠", "name": "Tubuh Manusia", "sub": "Otak, tubuh, dan kebiasaan ekstrem", "color": "#ffd23f"}, {"emo": "🚀", "name": "Luar Angkasa", "sub": "Bulan, planet, lubang hitam, dan alien", "color": "#7c9cff"}, {"emo": "🌋", "name": "Bumi & Alam", "sub": "Bencana, iklim, laut, dan bentang alam", "color": "#5ef2c0"}, {"emo": "💻", "name": "Teknologi & Internet", "sub": "Gadget, AI, listrik, dan masa depan", "color": "#4dd0e1"}, {"emo": "🦈", "name": "Hewan & Makhluk Hidup", "sub": "Satwa, tumbuhan, dan ekosistem", "color": "#ff8fab"}, {"emo": "🏛️", "name": "Sejarah & Peradaban", "sub": "Kalau sejarah berbelok arah", "color": "#ffa94d"}, {"emo": "🌍", "name": "Dunia & Masyarakat", "sub": "Kalau aturan main manusia berubah", "color": "#c0a0ff"}, {"emo": "⚛️", "name": "Fisika & Sains Aneh", "sub": "Gravitasi, waktu, atom, dan hal mustahil", "color": "#ff6b6b"}, {"emo": "🍜", "name": "Hidup Sehari-hari", "sub": "Kebiasaan, tantangan, dan situasi yang relatable", "color": "#a3e635"}, {"emo": "💥", "name": "Skenario Ekstrem", "sub": "Absurd, fantasi, dan bencana besar", "color": "#f0abfc"}];
+const ITEMS = [[0, "What If You Stopped Sleeping for 7 Days?", "Kalau kamu gak tidur 7 hari", 1], [0, "What If You Drank Only Coffee for 30 Days?", "Kalau cuma minum kopi 30 hari", 1], [0, "What If Humans Could Live for 500 Years?", "Kalau manusia bisa hidup 500 tahun", 1], [0, "What If You Never Cut Your Hair or Nails Again?", "Kalau kamu gak pernah potong rambut dan kuku lagi", 0], [0, "What If You Stopped Eating Sugar for 30 Days?", "Kalau kamu berhenti makan gula 30 hari", 0], [0, "What If You Ate Only Rice for a Month?", "Kalau kamu cuma makan nasi selama sebulan", 0], [0, "What If You Never Drank Water Again?", "Kalau kamu gak pernah minum air lagi", 0], [0, "What If You Drank 10 Liters of Water in One Day?", "Kalau kamu minum 10 liter air dalam sehari", 0], [0, "What If You Held Your Breath for 10 Minutes?", "Kalau kamu menahan napas 10 menit", 0], [0, "What If Your Heart Stopped for 60 Seconds?", "Kalau jantungmu berhenti 60 detik", 0], [0, "What If You Could Not Feel Pain?", "Kalau kamu gak bisa merasakan sakit", 0], [0, "What If You Lost Your Sense of Smell Forever?", "Kalau indra penciumanmu hilang selamanya", 0], [0, "What If You Could Never Forget Anything?", "Kalau kamu gak bisa lupa apa pun", 0], [0, "What If You Used 100% of Your Brain?", "Kalau kamu memakai 100% otakmu", 0], [0, "What If You Never Blinked Again?", "Kalau kamu gak pernah berkedip lagi", 0], [0, "What If You Stayed Underwater for 24 Hours?", "Kalau kamu berada di bawah air selama 24 jam", 0], [0, "What If You Ate Only Fast Food for 30 Days?", "Kalau kamu cuma makan makanan cepat saji 30 hari", 0], [0, "What If You Exercised Every Day for a Year?", "Kalau kamu olahraga tiap hari selama setahun", 0], [0, "What If You Never Exercised Again?", "Kalau kamu gak pernah olahraga lagi", 0], [0, "What If You Took a Cold Shower Every Day for 30 Days?", "Kalau kamu mandi air dingin tiap hari selama 30 hari", 0], [0, "What If You Stopped Brushing Your Teeth for a Year?", "Kalau kamu berhenti sikat gigi selama setahun", 0], [0, "What If You Lived in Total Darkness for a Week?", "Kalau kamu hidup dalam gelap total selama seminggu", 0], [0, "What If You Never Showered Again?", "Kalau kamu gak pernah mandi lagi", 0], [0, "What If You Ate Only Eggs for 30 Days?", "Kalau kamu cuma makan telur selama 30 hari", 0], [0, "What If You Skipped Breakfast Forever?", "Kalau kamu selamanya gak pernah sarapan", 0], [0, "What If You Didn't Eat for 7 Days?", "Kalau kamu gak makan selama 7 hari", 0], [0, "What If You Never Got Sick Again?", "Kalau kamu gak pernah sakit lagi", 0], [0, "What If You Had No Bones?", "Kalau tubuhmu gak punya tulang", 0], [0, "What If You Could Regrow Any Body Part?", "Kalau kamu bisa menumbuhkan lagi bagian tubuh apa pun", 0], [0, "What If Everyone Was Born Without Fingerprints?", "Kalau semua orang lahir tanpa sidik jari", 0], [0, "What If Humans Had Four Arms?", "Kalau manusia punya empat tangan", 0], [0, "What If Humans Could Breathe Underwater?", "Kalau manusia bisa bernapas di bawah air", 0], [0, "What If You Never Felt Hungry Again?", "Kalau kamu gak pernah merasa lapar lagi", 0], [0, "What If You Slept 16 Hours Every Day?", "Kalau kamu tidur 16 jam tiap hari", 0], [0, "What If You Only Slept 2 Hours a Night?", "Kalau kamu cuma tidur 2 jam semalam", 0], [0, "What If You Never Had to Sleep Again?", "Kalau kamu gak perlu tidur lagi", 0], [0, "What If You Didn't Speak for a Month?", "Kalau kamu gak bicara sama sekali selama sebulan", 0], [0, "What If You Stopped Using Your Right Hand?", "Kalau kamu berhenti memakai tangan kanan", 0], [0, "What If You Drank Soda Instead of Water for a Year?", "Kalau kamu minum soda ganti air putih selama setahun", 0], [0, "What If You Ate Spicy Food Every Day?", "Kalau kamu makan pedas tiap hari", 0], [0, "What If You Ate Too Much Salt in One Day?", "Kalau kamu makan garam kebanyakan dalam sehari", 0], [0, "What If You Never Cried Again?", "Kalau kamu gak pernah menangis lagi", 0], [0, "What If You Could Hear Every Sound at Once?", "Kalau kamu bisa mendengar semua suara sekaligus", 0], [0, "What If You Stayed in Bed for a Whole Year?", "Kalau kamu rebahan di kasur setahun penuh", 0], [0, "What If You Stood for 24 Hours Straight?", "Kalau kamu berdiri 24 jam nonstop", 0], [0, "What If You Were Struck by Lightning?", "Kalau kamu tersambar petir", 0], [0, "What If You Woke Up With Amnesia?", "Kalau kamu bangun tidur dengan amnesia", 0], [0, "What If Your Body Stopped Aging at 25?", "Kalau tubuhmu berhenti menua di usia 25", 0], [0, "What If Humans Could See in the Dark?", "Kalau manusia bisa melihat dalam gelap", 0], [0, "What If You Ate 10,000 Calories a Day?", "Kalau kamu makan 10.000 kalori sehari", 0], [1, "What If the Moon Disappeared Tonight?", "Kalau bulan hilang malam ini", 1], [1, "What If You Fell Into a Black Hole?", "Kalau kamu jatuh ke lubang hitam", 1], [1, "What If the Sun Disappeared for One Minute?", "Kalau Matahari menghilang selama satu menit", 0], [1, "What If the Sun Became a Black Hole?", "Kalau Matahari berubah jadi lubang hitam", 0], [1, "What If Earth Had Rings Like Saturn?", "Kalau Bumi punya cincin seperti Saturnus", 0], [1, "What If Earth Had Two Moons?", "Kalau Bumi punya dua bulan", 0], [1, "What If the Moon Crashed Into Earth?", "Kalau Bulan menabrak Bumi", 0], [1, "What If You Were Left Alone on the Moon?", "Kalau kamu ditinggal sendirian di Bulan", 0], [1, "What If You Stepped Into Space Without a Suit?", "Kalau kamu melangkah ke luar angkasa tanpa pakaian astronot", 0], [1, "What If You Went to Mars Tomorrow?", "Kalau kamu berangkat ke Mars besok", 0], [1, "What If Humans Built a Colony on Mars?", "Kalau manusia membangun koloni di Mars", 0], [1, "What If Jupiter Disappeared?", "Kalau Jupiter menghilang", 0], [1, "What If Jupiter Became a Star?", "Kalau Jupiter berubah jadi bintang", 0], [1, "What If Saturn Crashed Into Earth?", "Kalau Saturnus menabrak Bumi", 0], [1, "What If a Neutron Star Passed Through Our Solar System?", "Kalau bintang neutron melintasi tata surya kita", 0], [1, "What If a Black Hole Appeared Next to Earth?", "Kalau lubang hitam muncul di sebelah Bumi", 0], [1, "What If an Asteroid Hit Earth Today?", "Kalau asteroid menabrak Bumi hari ini", 0], [1, "What If Earth Was Hit by a Gamma-Ray Burst?", "Kalau Bumi dihantam semburan sinar gamma", 0], [1, "What If You Traveled at the Speed of Light?", "Kalau kamu bergerak secepat cahaya", 0], [1, "What If You Could Travel Faster Than Light?", "Kalau kamu bisa bergerak lebih cepat dari cahaya", 0], [1, "What If the Sun Exploded Right Now?", "Kalau Matahari meledak sekarang juga", 0], [1, "What If Earth Stopped Orbiting the Sun?", "Kalau Bumi berhenti mengorbit Matahari", 0], [1, "What If Earth Was Twice as Big?", "Kalau Bumi dua kali lebih besar", 0], [1, "What If Earth Was Half Its Size?", "Kalau ukuran Bumi cuma setengahnya", 0], [1, "What If Earth Was Closer to the Sun?", "Kalau Bumi lebih dekat ke Matahari", 0], [1, "What If Earth Was Farther From the Sun?", "Kalau Bumi lebih jauh dari Matahari", 0], [1, "What If the Milky Way Collided With Andromeda?", "Kalau Bima Sakti bertabrakan dengan Andromeda", 0], [1, "What If Aliens Visited Earth Tomorrow?", "Kalau alien datang ke Bumi besok", 0], [1, "What If We Found Alien Life on Europa?", "Kalau kita menemukan kehidupan alien di Europa", 0], [1, "What If We Received a Signal From Space?", "Kalau kita menerima sinyal dari luar angkasa", 0], [1, "What If We Built a City on the Moon?", "Kalau kita membangun kota di Bulan", 0], [1, "What If You Lived on the Space Station for a Year?", "Kalau kamu tinggal di stasiun luar angkasa selama setahun", 0], [1, "What If You Fell Into the Sun?", "Kalau kamu jatuh ke Matahari", 0], [1, "What If You Landed on Venus?", "Kalau kamu mendarat di Venus", 0], [1, "What If You Fell Into Jupiter?", "Kalau kamu jatuh ke Jupiter", 0], [1, "What If You Dropped a Ball From the Edge of Space?", "Kalau kamu menjatuhkan bola dari tepi luar angkasa", 0], [1, "What If You Cried in Space?", "Kalau kamu menangis di luar angkasa", 0], [1, "What If You Spent One Day on Pluto?", "Kalau kamu menghabiskan sehari di Pluto", 0], [1, "What If the Sun Was Blue?", "Kalau Matahari berwarna biru", 0], [1, "What If a Day Lasted 48 Hours?", "Kalau sehari berlangsung 48 jam", 0], [1, "What If a Day Lasted Only 12 Hours?", "Kalau sehari cuma 12 jam", 0], [1, "What If Earth Had No Atmosphere?", "Kalau Bumi gak punya atmosfer", 0], [1, "What If Earth Had No Magnetic Field?", "Kalau Bumi gak punya medan magnet", 0], [1, "What If Earth Tilted 90 Degrees?", "Kalau sumbu Bumi miring 90 derajat", 0], [1, "What If the Moon Was Twice as Close?", "Kalau Bulan dua kali lebih dekat", 0], [1, "What If We Mined an Entire Asteroid?", "Kalau kita menambang satu asteroid utuh", 0], [1, "What If Space Elevators Were Real?", "Kalau lift luar angkasa itu nyata", 0], [1, "What If a Rogue Planet Entered Our Solar System?", "Kalau planet liar masuk ke tata surya kita", 0], [1, "What If the Universe Stopped Expanding?", "Kalau alam semesta berhenti mengembang", 0], [1, "What If the Stars Stopped Shining?", "Kalau bintang-bintang berhenti bersinar", 0], [2, "What If the Earth Stopped Spinning for One Second?", "Kalau bumi berhenti berputar 1 detik", 1], [2, "What If Every Volcano Erupted at Once?", "Kalau semua gunung berapi meletus bersamaan", 1], [2, "What If All the Ice on Earth Melted?", "Kalau semua es di Bumi mencair", 0], [2, "What If the Ocean Dried Up?", "Kalau lautan mengering", 0], [2, "What If Sea Levels Rose 100 Meters?", "Kalau permukaan laut naik 100 meter", 0], [2, "What If the Amazon Rainforest Disappeared?", "Kalau hutan hujan Amazon lenyap", 0], [2, "What If All Trees Disappeared?", "Kalau semua pohon menghilang", 0], [2, "What If It Rained for 40 Days Nonstop?", "Kalau hujan turun 40 hari tanpa henti", 0], [2, "What If It Never Stopped Snowing?", "Kalau salju gak pernah berhenti turun", 0], [2, "What If Yellowstone Erupted Tomorrow?", "Kalau Yellowstone meletus besok", 0], [2, "What If Krakatoa Erupted Again Today?", "Kalau Krakatau meletus lagi hari ini", 0], [2, "What If Mount Everest Disappeared Overnight?", "Kalau Gunung Everest hilang dalam semalam", 0], [2, "What If a Mega-Tsunami Hit the Coast Tomorrow?", "Kalau tsunami raksasa menghantam pantai besok", 0], [2, "What If the Biggest Earthquake Ever Hit Today?", "Kalau gempa terbesar sepanjang sejarah terjadi hari ini", 0], [2, "What If the Sahara Became a Forest?", "Kalau Sahara berubah jadi hutan", 0], [2, "What If Antarctica Became Warm?", "Kalau Antartika jadi hangat", 0], [2, "What If Greenland's Ice Sheet Collapsed?", "Kalau lapisan es Greenland runtuh", 0], [2, "What If Earth's Core Cooled Down?", "Kalau inti Bumi mendingin", 0], [2, "What If You Dug a Hole Through the Earth?", "Kalau kamu menggali lubang menembus Bumi", 0], [2, "What If You Jumped Into the Mariana Trench?", "Kalau kamu terjun ke Palung Mariana", 0], [2, "What If You Fell Into a Volcano?", "Kalau kamu jatuh ke dalam gunung berapi", 0], [2, "What If the Oceans Turned Into Fresh Water?", "Kalau lautan berubah jadi air tawar", 0], [2, "What If the Ocean Became Twice as Salty?", "Kalau laut jadi dua kali lebih asin", 0], [2, "What If All the Coral Reefs Died?", "Kalau semua terumbu karang mati", 0], [2, "What If There Were No Seasons?", "Kalau gak ada pergantian musim", 0], [2, "What If the Ozone Layer Vanished?", "Kalau lapisan ozon lenyap", 0], [2, "What If the Gulf Stream Stopped?", "Kalau Arus Teluk berhenti mengalir", 0], [2, "What If Earth Had No Water?", "Kalau Bumi gak punya air", 0], [2, "What If Earth Was Actually Flat?", "Kalau Bumi ternyata datar", 0], [2, "What If Earth Was All Land?", "Kalau seluruh Bumi adalah daratan", 0], [2, "What If Earth Was Covered by Water Completely?", "Kalau Bumi tertutup air sepenuhnya", 0], [2, "What If All the Continents Joined Together Again?", "Kalau semua benua menyatu lagi", 0], [2, "What If the Himalayas Were Twice as Tall?", "Kalau Himalaya dua kali lebih tinggi", 0], [2, "What If a Supervolcano Erupted Under the Ocean?", "Kalau gunung super meletus di bawah laut", 0], [2, "What If a Hurricane Never Ended?", "Kalau badai tak pernah reda", 0], [2, "What If the Wind Stopped Blowing?", "Kalau angin berhenti bertiup", 0], [2, "What If Lightning Struck Every Second?", "Kalau petir menyambar tiap detik", 0], [2, "What If a Giant Tornado Lasted for a Year?", "Kalau tornado raksasa bertahan setahun", 0], [2, "What If You Lived in the Arctic for a Year?", "Kalau kamu tinggal di Arktik selama setahun", 0], [2, "What If the Whole World Turned Into a Desert?", "Kalau seluruh dunia berubah jadi gurun", 0], [2, "What If Rivers Flowed Backward?", "Kalau sungai mengalir terbalik", 0], [2, "What If the Amazon River Dried Up?", "Kalau Sungai Amazon mengering", 0], [2, "What If Earth's Oxygen Dropped by 10%?", "Kalau oksigen Bumi turun 10%", 0], [2, "What If Oxygen Levels Doubled?", "Kalau kadar oksigen naik dua kali lipat", 0], [2, "What If Earth Had No Mountains?", "Kalau Bumi gak punya gunung", 0], [2, "What If the Sun Never Set?", "Kalau Matahari gak pernah terbenam", 0], [2, "What If Nights Lasted 6 Months?", "Kalau malam berlangsung 6 bulan", 0], [2, "What If All the Beaches Disappeared?", "Kalau semua pantai lenyap", 0], [2, "What If a Meteor Shower Lasted for a Week?", "Kalau hujan meteor berlangsung seminggu penuh", 0], [2, "What If a New Ice Age Started Tomorrow?", "Kalau zaman es baru dimulai besok", 0], [3, "What If the Internet Shut Down Forever?", "Kalau internet mati selamanya", 1], [3, "What If All Satellites Stopped Working?", "Kalau semua satelit berhenti berfungsi", 0], [3, "What If GPS Stopped Working Tomorrow?", "Kalau GPS mati besok", 0], [3, "What If Electricity Disappeared for a Week?", "Kalau listrik hilang selama seminggu", 0], [3, "What If a Solar Storm Knocked Out Every Power Grid?", "Kalau badai Matahari melumpuhkan semua jaringan listrik", 0], [3, "What If Phone Batteries Lasted a Year?", "Kalau baterai HP awet setahun", 0], [3, "What If Wi-Fi Disappeared Forever?", "Kalau Wi-Fi hilang selamanya", 0], [3, "What If AI Became Smarter Than Humans?", "Kalau AI jadi lebih pintar dari manusia", 0], [3, "What If Robots Took Every Job?", "Kalau robot mengambil semua pekerjaan", 0], [3, "What If Everyone Had a Personal Robot?", "Kalau semua orang punya robot pribadi", 0], [3, "What If Social Media Disappeared Overnight?", "Kalau media sosial hilang dalam semalam", 0], [3, "What If YouTube Shut Down?", "Kalau YouTube ditutup", 0], [3, "What If Google Disappeared for a Day?", "Kalau Google hilang selama sehari", 0], [3, "What If Every Password Was Hacked at Once?", "Kalau semua password diretas bersamaan", 0], [3, "What If We Had Unlimited Free Energy?", "Kalau kita punya energi gratis tanpa batas", 0], [3, "What If Cars Could Fly?", "Kalau mobil bisa terbang", 0], [3, "What If Every Car Was Self-Driving?", "Kalau semua mobil nyetir sendiri", 0], [3, "What If All Cars Were Banned in Cities?", "Kalau semua mobil dilarang masuk kota", 0], [3, "What If Cash Disappeared?", "Kalau uang tunai menghilang", 0], [3, "What If Everyone Used Cryptocurrency?", "Kalau semua orang pakai kripto", 0], [3, "What If We Could Upload Our Minds to a Computer?", "Kalau kita bisa mengunggah pikiran ke komputer", 0], [3, "What If Quantum Computers Became Common?", "Kalau komputer kuantum jadi barang umum", 0], [3, "What If Time Travel Was Invented?", "Kalau mesin waktu ditemukan", 0], [3, "What If Teleportation Was Real?", "Kalau teleportasi itu nyata", 0], [3, "What If We Built a Dyson Sphere?", "Kalau kita membangun Bola Dyson", 0], [3, "What If Humans Merged With Machines?", "Kalau manusia menyatu dengan mesin", 0], [3, "What If Smartphones Were Never Invented?", "Kalau smartphone gak pernah ditemukan", 0], [3, "What If Computers Were Never Invented?", "Kalau komputer gak pernah ditemukan", 0], [3, "What If Every Screen Turned Off for 24 Hours?", "Kalau semua layar mati selama 24 jam", 0], [3, "What If Everyone Deleted Their Social Media?", "Kalau semua orang menghapus media sosialnya", 0], [3, "What If Gaming Was Banned Worldwide?", "Kalau game dilarang di seluruh dunia", 0], [3, "What If Video Games Became Reality?", "Kalau video game jadi kenyataan", 0], [3, "What If You Lived Inside a Virtual World?", "Kalau kamu hidup di dalam dunia virtual", 0], [3, "What If Every Undersea Internet Cable Was Cut?", "Kalau semua kabel internet bawah laut putus", 0], [3, "What If Every Place on Earth Had Free Internet?", "Kalau setiap tempat di Bumi punya internet gratis", 0], [3, "What If We Could Print Food?", "Kalau kita bisa mencetak makanan", 0], [3, "What If Everything Was 3D Printed?", "Kalau semuanya dicetak 3D", 0], [3, "What If Batteries Never Ran Out?", "Kalau baterai gak pernah habis", 0], [3, "What If Nuclear Power Replaced All Other Energy?", "Kalau tenaga nuklir menggantikan semua energi lain", 0], [3, "What If We Only Used Solar Power?", "Kalau kita cuma pakai tenaga surya", 0], [3, "What If the World Ran Out of Oil?", "Kalau dunia kehabisan minyak", 0], [3, "What If Phones Had Infinite Storage?", "Kalau HP punya penyimpanan tanpa batas", 0], [3, "What If Drones Delivered Everything?", "Kalau drone mengantar semuanya", 0], [3, "What If Humans Had Brain Chips?", "Kalau manusia punya chip di otak", 0], [3, "What If AI Could Read Your Thoughts?", "Kalau AI bisa membaca pikiranmu", 0], [3, "What If Machines Could Feel Emotions?", "Kalau mesin bisa merasakan emosi", 0], [3, "What If Everyone Could Code?", "Kalau semua orang bisa coding", 0], [3, "What If Airplanes Disappeared?", "Kalau pesawat terbang menghilang", 0], [3, "What If All Data in the World Was Erased?", "Kalau semua data di dunia terhapus", 0], [3, "What If You Could Download Knowledge Into Your Brain?", "Kalau kamu bisa mengunduh pengetahuan ke otak", 0], [4, "What If All Insects Went Extinct?", "Kalau semua serangga punah", 1], [4, "What If All the Bees Disappeared?", "Kalau semua lebah menghilang", 0], [4, "What If Mosquitoes Went Extinct?", "Kalau nyamuk punah", 0], [4, "What If Sharks Disappeared From the Ocean?", "Kalau hiu lenyap dari lautan", 0], [4, "What If Whales Went Extinct?", "Kalau paus punah", 0], [4, "What If Dinosaurs Never Went Extinct?", "Kalau dinosaurus gak pernah punah", 0], [4, "What If Dinosaurs Came Back to Life?", "Kalau dinosaurus hidup kembali", 0], [4, "What If Megalodon Was Still Alive?", "Kalau Megalodon masih hidup", 0], [4, "What If Ants Were the Size of Humans?", "Kalau semut sebesar manusia", 0], [4, "What If Humans Were the Size of Ants?", "Kalau manusia seukuran semut", 0], [4, "What If Elephants Went Extinct?", "Kalau gajah punah", 0], [4, "What If Cats Ruled the World?", "Kalau kucing menguasai dunia", 0], [4, "What If Dogs Could Talk?", "Kalau anjing bisa bicara", 0], [4, "What If Every Animal Could Talk?", "Kalau semua hewan bisa bicara", 0], [4, "What If Animals Had Human Intelligence?", "Kalau hewan punya kecerdasan manusia", 0], [4, "What If Cockroaches Took Over the World?", "Kalau kecoa menguasai dunia", 0], [4, "What If Spiders Disappeared?", "Kalau laba-laba menghilang", 0], [4, "What If All Birds Disappeared?", "Kalau semua burung menghilang", 0], [4, "What If Penguins Could Fly?", "Kalau pinguin bisa terbang", 0], [4, "What If Dolphins Evolved to Walk on Land?", "Kalau lumba-lumba berevolusi jadi bisa jalan di darat", 0], [4, "What If You Swam With a Great White Shark?", "Kalau kamu berenang bersama hiu putih", 0], [4, "What If You Were Stung by 1,000 Bees?", "Kalau kamu disengat 1.000 lebah", 0], [4, "What If You Were Bitten by a King Cobra?", "Kalau kamu digigit king kobra", 0], [4, "What If You Were Swallowed by a Whale?", "Kalau kamu ditelan paus", 0], [4, "What If You Met a Komodo Dragon?", "Kalau kamu bertemu komodo", 0], [4, "What If Orangutans Went Extinct?", "Kalau orangutan punah", 0], [4, "What If Apes Became Smarter Than Humans?", "Kalau kera jadi lebih pintar dari manusia", 0], [4, "What If You Raised a Lion as a Pet?", "Kalau kamu memelihara singa", 0], [4, "What If Cats Were the Size of Tigers?", "Kalau kucing seukuran harimau", 0], [4, "What If Bears Never Hibernated?", "Kalau beruang gak pernah hibernasi", 0], [4, "What If Frogs Disappeared?", "Kalau katak menghilang", 0], [4, "What If There Were No Plants?", "Kalau gak ada tumbuhan sama sekali", 0], [4, "What If Plants Could Move?", "Kalau tumbuhan bisa bergerak", 0], [4, "What If Trees Could Walk?", "Kalau pohon bisa berjalan", 0], [4, "What If Fungi Took Over the World?", "Kalau jamur menguasai dunia", 0], [4, "What If Bacteria Disappeared?", "Kalau bakteri menghilang", 0], [4, "What If All Viruses Disappeared?", "Kalau semua virus lenyap", 0], [4, "What If Humans Lived in Colonies Like Ants?", "Kalau manusia hidup berkoloni seperti semut", 0], [4, "What If You Kept an Octopus as a Pet?", "Kalau kamu memelihara gurita", 0], [4, "What If Octopuses Became the Dominant Species?", "Kalau gurita jadi spesies dominan", 0], [4, "What If the Ocean Had No Fish?", "Kalau laut gak punya ikan", 0], [4, "What If Cows Disappeared?", "Kalau sapi menghilang", 0], [4, "What If Chickens Went Extinct?", "Kalau ayam punah", 0], [4, "What If Snakes Had Legs?", "Kalau ular punya kaki", 0], [4, "What If Wolves Returned to Every Forest?", "Kalau serigala kembali ke setiap hutan", 0], [4, "What If Birds Were the Size of Airplanes?", "Kalau burung sebesar pesawat", 0], [4, "What If Jellyfish Took Over the Oceans?", "Kalau ubur-ubur menguasai lautan", 0], [4, "What If Mammoths Were Brought Back?", "Kalau mamut dihidupkan kembali", 0], [4, "What If Animals Could Live Forever?", "Kalau hewan bisa hidup selamanya", 0], [4, "What If Rats Disappeared From Cities?", "Kalau tikus menghilang dari kota", 0], [5, "What If the Roman Empire Never Fell?", "Kalau Kekaisaran Romawi gak pernah runtuh", 0], [5, "What If the Library of Alexandria Never Burned?", "Kalau Perpustakaan Aleksandria gak pernah terbakar", 0], [5, "What If World War 1 Never Happened?", "Kalau Perang Dunia I gak pernah terjadi", 0], [5, "What If World War 2 Never Happened?", "Kalau Perang Dunia II gak pernah terjadi", 0], [5, "What If the Internet Was Invented in 1900?", "Kalau internet ditemukan tahun 1900", 0], [5, "What If the Printing Press Was Never Invented?", "Kalau mesin cetak gak pernah ditemukan", 0], [5, "What If Electricity Was Never Discovered?", "Kalau listrik gak pernah ditemukan", 0], [5, "What If the Wheel Was Never Invented?", "Kalau roda gak pernah ditemukan", 0], [5, "What If Fire Was Never Discovered?", "Kalau api gak pernah ditemukan", 0], [5, "What If Columbus Never Sailed to America?", "Kalau Columbus gak pernah berlayar ke Amerika", 0], [5, "What If Ancient Egypt Still Existed Today?", "Kalau Mesir Kuno masih ada sampai sekarang", 0], [5, "What If the Mongol Empire Never Collapsed?", "Kalau Kekaisaran Mongol gak pernah runtuh", 0], [5, "What If the Great Wall of China Was Never Built?", "Kalau Tembok Besar China gak pernah dibangun", 0], [5, "What If the Black Death Never Happened?", "Kalau Wabah Hitam gak pernah terjadi", 0], [5, "What If Atlantis Was Real?", "Kalau Atlantis itu nyata", 0], [5, "What If the Titanic Never Sank?", "Kalau Titanic gak pernah tenggelam", 0], [5, "What If Pompeii Was Never Destroyed?", "Kalau Pompeii gak pernah hancur", 0], [5, "What If Humans Never Discovered Agriculture?", "Kalau manusia gak pernah menemukan pertanian", 0], [5, "What If the Industrial Revolution Never Happened?", "Kalau Revolusi Industri gak pernah terjadi", 0], [5, "What If Antibiotics Were Never Discovered?", "Kalau antibiotik gak pernah ditemukan", 0], [5, "What If the Vikings Conquered the World?", "Kalau bangsa Viking menaklukkan dunia", 0], [5, "What If the Ottoman Empire Never Fell?", "Kalau Kekaisaran Utsmaniyah gak pernah runtuh", 0], [5, "What If Cleopatra Lived Today?", "Kalau Cleopatra hidup di zaman sekarang", 0], [5, "What If Ancient Greeks Had the Internet?", "Kalau orang Yunani Kuno punya internet", 0], [5, "What If Julius Caesar Was Never Assassinated?", "Kalau Julius Caesar gak pernah dibunuh", 0], [5, "What If Alexander the Great Lived Longer?", "Kalau Alexander Agung hidup lebih lama", 0], [5, "What If the Maya Civilization Never Collapsed?", "Kalau peradaban Maya gak pernah runtuh", 0], [5, "What If the Aztecs Defeated the Spanish?", "Kalau bangsa Aztec mengalahkan Spanyol", 0], [5, "What If the Silk Road Never Closed?", "Kalau Jalur Sutra gak pernah ditutup", 0], [5, "What If the Majapahit Empire Never Fell?", "Kalau Kerajaan Majapahit gak pernah runtuh", 0], [5, "What If Indonesia Was Never Colonized?", "Kalau Indonesia gak pernah dijajah", 0], [5, "What If the Srivijaya Empire Ruled Today?", "Kalau Kerajaan Sriwijaya masih berkuasa sekarang", 0], [5, "What If Borobudur Was Built Today?", "Kalau Borobudur dibangun hari ini", 0], [5, "What If the Pyramids Were Built Today?", "Kalau Piramida dibangun sekarang", 0], [5, "What If Humans Never Landed on the Moon?", "Kalau manusia gak pernah mendarat di Bulan", 0], [5, "What If the Cold War Turned Hot?", "Kalau Perang Dingin berubah jadi perang terbuka", 0], [5, "What If the Soviet Union Never Collapsed?", "Kalau Uni Soviet gak pernah bubar", 0], [5, "What If Money Was Never Invented?", "Kalau uang gak pernah ditemukan", 0], [5, "What If Writing Was Never Invented?", "Kalau tulisan gak pernah ditemukan", 0], [5, "What If Gunpowder Was Never Invented?", "Kalau mesiu gak pernah ditemukan", 0], [5, "What If the Samurai Still Existed?", "Kalau samurai masih ada", 0], [5, "What If a Medieval Knight Time Traveled to Today?", "Kalau ksatria abad pertengahan pindah ke zaman sekarang", 0], [5, "What If You Time Traveled to the Stone Age?", "Kalau kamu melakukan perjalanan ke Zaman Batu", 0], [5, "What If You Were Sent Back to Ancient Rome?", "Kalau kamu dikirim kembali ke Roma Kuno", 0], [5, "What If You Lived in the Age of Dinosaurs?", "Kalau kamu hidup di zaman dinosaurus", 0], [5, "What If Neanderthals Never Went Extinct?", "Kalau Neanderthal gak pernah punah", 0], [5, "What If the Ice Age Never Ended?", "Kalau Zaman Es gak pernah berakhir", 0], [5, "What If the Eiffel Tower Was Never Built?", "Kalau Menara Eiffel gak pernah dibangun", 0], [5, "What If the Wright Brothers Never Flew?", "Kalau Wright bersaudara gak pernah terbang", 0], [5, "What If Leonardo da Vinci's Inventions Were Actually Built?", "Kalau penemuan Leonardo da Vinci benar-benar dibuat", 0], [6, "What If Everyone on Earth Jumped at the Same Time?", "Kalau semua orang di Bumi melompat bersamaan", 0], [6, "What If the Whole Population Lived in One City?", "Kalau seluruh penduduk dunia tinggal di satu kota", 0], [6, "What If Everyone Spoke the Same Language?", "Kalau semua orang bicara satu bahasa", 0], [6, "What If Everyone Got $1 Million Today?", "Kalau semua orang dapat 1 juta dolar hari ini", 0], [6, "What If Everyone Was Equally Rich?", "Kalau semua orang sama kayanya", 0], [6, "What If There Were No Borders?", "Kalau gak ada batas negara", 0], [6, "What If the World Had One Government?", "Kalau dunia punya satu pemerintahan", 0], [6, "What If Nobody Had to Work?", "Kalau gak ada yang perlu bekerja", 0], [6, "What If We Worked Only 4 Days a Week?", "Kalau kita kerja cuma 4 hari seminggu", 0], [6, "What If Everyone Quit Their Jobs at Once?", "Kalau semua orang resign bersamaan", 0], [6, "What If There Were No Schools?", "Kalau gak ada sekolah", 0], [6, "What If Everyone Told the Truth for 24 Hours?", "Kalau semua orang jujur selama 24 jam", 0], [6, "What If Lying Was Impossible?", "Kalau berbohong itu mustahil", 0], [6, "What If Everyone Could Read Minds?", "Kalau semua orang bisa membaca pikiran", 0], [6, "What If Nobody Ever Died?", "Kalau gak ada yang pernah meninggal", 0], [6, "What If the World Population Doubled Overnight?", "Kalau populasi dunia berlipat ganda dalam semalam", 0], [6, "What If the World Population Dropped by Half?", "Kalau populasi dunia turun setengahnya", 0], [6, "What If Humans Stopped Having Babies?", "Kalau manusia berhenti punya bayi", 0], [6, "What If Everyone Stopped Using Plastic?", "Kalau semua orang berhenti pakai plastik", 0], [6, "What If We Recycled Everything?", "Kalau kita mendaur ulang semuanya", 0], [6, "What If All the Plastic in the Ocean Vanished?", "Kalau semua plastik di laut lenyap", 0], [6, "What If Fast Food Was Banned?", "Kalau makanan cepat saji dilarang", 0], [6, "What If Everyone Became Vegan Tomorrow?", "Kalau semua orang jadi vegan besok", 0], [6, "What If Cities Were Built Underground?", "Kalau kota dibangun di bawah tanah", 0], [6, "What If We Built Cities Under the Sea?", "Kalau kita membangun kota di bawah laut", 0], [6, "What If We Built a City in the Sky?", "Kalau kita membangun kota di langit", 0], [6, "What If Everyone Lived Like a Billionaire for a Day?", "Kalau semua orang hidup seperti miliarder sehari", 0], [6, "What If Nobody Could Use Money for a Month?", "Kalau gak ada yang boleh pakai uang selama sebulan", 0], [6, "What If Electricity Was Free for Everyone?", "Kalau listrik gratis untuk semua orang", 0], [6, "What If Everyone Had Free Healthcare?", "Kalau semua orang dapat layanan kesehatan gratis", 0], [6, "What If Hunger Was Eliminated Worldwide?", "Kalau kelaparan dihapus di seluruh dunia", 0], [6, "What If All Diseases Were Cured?", "Kalau semua penyakit bisa disembuhkan", 0], [6, "What If Cancer Was Cured Tomorrow?", "Kalau kanker sembuh besok", 0], [6, "What If a New Pandemic Hit Tomorrow?", "Kalau pandemi baru terjadi besok", 0], [6, "What If the Entire World Went Silent for an Hour?", "Kalau seluruh dunia hening selama satu jam", 0], [6, "What If We Turned Off Every Light in the World for a Night?", "Kalau kita matikan semua lampu di dunia semalam", 0], [6, "What If All Wars Ended Today?", "Kalau semua perang berakhir hari ini", 0], [6, "What If Everyone Was Equally Smart?", "Kalau semua orang sama pintarnya", 0], [6, "What If Everyone Was the Same Height?", "Kalau semua orang sama tingginya", 0], [6, "What If Everyone Looked Exactly the Same?", "Kalau semua orang berwajah persis sama", 0], [6, "What If Everyone Had Superpowers?", "Kalau semua orang punya kekuatan super", 0], [6, "What If Tourism Stopped for a Year?", "Kalau pariwisata berhenti selama setahun", 0], [6, "What If All Airplanes Were Grounded for a Month?", "Kalau semua pesawat dilarang terbang sebulan", 0], [6, "What If Weekends Lasted 3 Days?", "Kalau akhir pekan berlangsung 3 hari", 0], [6, "What If We Lived Without Clocks?", "Kalau kita hidup tanpa jam", 0], [6, "What If Everyone Was Always Happy?", "Kalau semua orang selalu bahagia", 0], [6, "What If Football Disappeared Forever?", "Kalau sepak bola hilang selamanya", 0], [6, "What If Music Was Banned?", "Kalau musik dilarang", 0], [6, "What If Movies Never Existed?", "Kalau film gak pernah ada", 0], [6, "What If Everyone Planted a Tree Today?", "Kalau semua orang menanam satu pohon hari ini", 0], [7, "What If Gravity Doubled for One Day?", "Kalau gravitasi dua kali lipat selama sehari", 0], [7, "What If Gravity Disappeared for 5 Seconds?", "Kalau gravitasi hilang 5 detik", 0], [7, "What If Gravity Was Half as Strong?", "Kalau gravitasi cuma setengah kuat", 0], [7, "What If the Speed of Light Was Much Slower?", "Kalau kecepatan cahaya jauh lebih lambat", 0], [7, "What If Time Stopped for One Hour?", "Kalau waktu berhenti selama satu jam", 0], [7, "What If Time Ran Backward?", "Kalau waktu berjalan mundur", 0], [7, "What If You Could Slow Down Time?", "Kalau kamu bisa memperlambat waktu", 0], [7, "What If You Were Invisible?", "Kalau kamu tak terlihat", 0], [7, "What If You Shrank to the Size of an Atom?", "Kalau kamu menyusut sekecil atom", 0], [7, "What If You Could Walk Through Walls?", "Kalau kamu bisa menembus tembok", 0], [7, "What If You Could Fly?", "Kalau kamu bisa terbang", 0], [7, "What If You Had Super Speed?", "Kalau kamu punya kecepatan super", 0], [7, "What If Atoms Stopped Moving?", "Kalau atom berhenti bergerak", 0], [7, "What If All the Empty Space in Atoms Disappeared?", "Kalau semua ruang kosong di dalam atom lenyap", 0], [7, "What If Absolute Zero Hit Earth?", "Kalau suhu nol mutlak melanda Bumi", 0], [7, "What If Earth Reached 100°C?", "Kalau suhu Bumi mencapai 100°C", 0], [7, "What If Ice Sank Instead of Floating?", "Kalau es tenggelam, bukan mengapung", 0], [7, "What If All Water Froze Instantly?", "Kalau semua air membeku seketika", 0], [7, "What If Sound Could Travel Through Space?", "Kalau suara bisa merambat di luar angkasa", 0], [7, "What If Colors Disappeared?", "Kalau warna menghilang", 0], [7, "What If Humans Could See Ultraviolet Light?", "Kalau manusia bisa melihat sinar ultraviolet", 0], [7, "What If Magnets Stopped Working?", "Kalau magnet berhenti bekerja", 0], [7, "What If Earth Became a Giant Magnet?", "Kalau Bumi jadi magnet raksasa", 0], [7, "What If Everything Conducted Electricity?", "Kalau semua benda menghantarkan listrik", 0], [7, "What If Friction Disappeared?", "Kalau gesekan hilang", 0], [7, "What If Everything Moved 10 Times Faster?", "Kalau semuanya bergerak 10 kali lebih cepat", 0], [7, "What If You Could Clone Yourself?", "Kalau kamu bisa mengkloning dirimu sendiri", 0], [7, "What If a Parallel Universe Existed Next to Ours?", "Kalau alam semesta paralel ada di sebelah kita", 0], [7, "What If We Lived in a Simulation?", "Kalau kita hidup di dalam simulasi", 0], [7, "What If We Lived in a Four-Dimensional World?", "Kalau kita hidup di dunia empat dimensi", 0], [7, "What If Antimatter Touched Earth?", "Kalau antimateri menyentuh Bumi", 0], [7, "What If a Teaspoon of Neutron Star Fell on Earth?", "Kalau satu sendok teh bintang neutron jatuh ke Bumi", 0], [7, "What If the Big Bang Happened Again?", "Kalau Big Bang terjadi lagi", 0], [7, "What If Dark Matter Disappeared?", "Kalau materi gelap lenyap", 0], [7, "What If You Fell Into a Wormhole?", "Kalau kamu jatuh ke lubang cacing", 0], [7, "What If You Could See Gravity?", "Kalau kamu bisa melihat gravitasi", 0], [7, "What If Sound Was Visible?", "Kalau suara bisa terlihat", 0], [7, "What If the Ocean Boiled?", "Kalau lautan mendidih", 0], [7, "What If Pi Was Exactly 3?", "Kalau nilai Pi tepat 3", 0], [7, "What If Numbers Didn't Exist?", "Kalau angka gak pernah ada", 0], [7, "What If Zero Was Never Invented?", "Kalau angka nol gak pernah ditemukan", 0], [7, "What If 1 + 1 Wasn't 2?", "Kalau 1 + 1 bukan 2", 0], [7, "What If Everything Weighed Double?", "Kalau semua benda beratnya dua kali lipat", 0], [7, "What If Mirrors Showed the Future?", "Kalau cermin menampilkan masa depan", 0], [7, "What If DNA Could Be Edited at Will?", "Kalau DNA bisa diedit sesuka hati", 0], [7, "What If We Could Clone Dinosaurs?", "Kalau kita bisa mengkloning dinosaurus", 0], [7, "What If Everyone Had Identical DNA?", "Kalau semua orang punya DNA identik", 0], [7, "What If You Could Photosynthesize Like a Plant?", "Kalau kamu bisa berfotosintesis seperti tumbuhan", 0], [7, "What If You Screamed Loud Enough to Break Glass?", "Kalau kamu berteriak sekeras itu sampai kaca pecah", 0], [7, "What If We Discovered Immortality?", "Kalau kita menemukan keabadian", 0], [8, "What If You Lived Without Your Phone for a Month?", "Kalau hidup tanpa HP sebulan", 1], [8, "What If You Quit Social Media for a Year?", "Kalau kamu berhenti main medsos setahun", 0], [8, "What If You Woke Up at 4 AM Every Day?", "Kalau kamu bangun jam 4 pagi tiap hari", 0], [8, "What If You Walked 10,000 Steps Every Day for a Year?", "Kalau kamu jalan 10.000 langkah tiap hari selama setahun", 0], [8, "What If You Read a Book Every Day?", "Kalau kamu baca satu buku tiap hari", 0], [8, "What If You Saved Half Your Salary for 10 Years?", "Kalau kamu menabung setengah gajimu selama 10 tahun", 0], [8, "What If You Spent Nothing for 30 Days?", "Kalau kamu gak keluar uang sama sekali 30 hari", 0], [8, "What If You Lived on $1 a Day?", "Kalau kamu hidup dengan 1 dolar per hari", 0], [8, "What If You Ate Instant Noodles Every Day?", "Kalau kamu makan mi instan tiap hari", 0], [8, "What If You Ate Only One Meal a Day?", "Kalau kamu cuma makan sekali sehari", 0], [8, "What If You Drank 3 Cups of Coffee a Day for 10 Years?", "Kalau kamu minum 3 gelas kopi sehari selama 10 tahun", 0], [8, "What If You Stopped Drinking Soda Forever?", "Kalau kamu berhenti minum soda selamanya", 0], [8, "What If You Gave Up Fried Food for Good?", "Kalau kamu berhenti makan gorengan selamanya", 0], [8, "What If You Stopped Eating Rice for 30 Days?", "Kalau kamu berhenti makan nasi selama 30 hari", 0], [8, "What If You Said Yes to Everything for a Week?", "Kalau kamu bilang iya ke semuanya selama seminggu", 0], [8, "What If You Said No to Everything for a Week?", "Kalau kamu bilang tidak ke semuanya selama seminggu", 0], [8, "What If You Learned a New Skill Every Month?", "Kalau kamu belajar skill baru tiap bulan", 0], [8, "What If You Meditated Every Day for a Year?", "Kalau kamu meditasi tiap hari selama setahun", 0], [8, "What If You Wrote in a Journal Every Day for 5 Years?", "Kalau kamu nulis jurnal tiap hari selama 5 tahun", 0], [8, "What If You Never Used an Alarm Clock Again?", "Kalau kamu gak pernah pakai alarm lagi", 0], [8, "What If You Went to Bed at 8 PM Every Night?", "Kalau kamu tidur jam 8 malam tiap hari", 0], [8, "What If You Lived Without a Fridge?", "Kalau kamu hidup tanpa kulkas", 0], [8, "What If You Lived Without Electricity for a Month?", "Kalau kamu hidup tanpa listrik selama sebulan", 0], [8, "What If You Lived Without a Car or Motorbike?", "Kalau kamu hidup tanpa mobil dan motor", 0], [8, "What If You Lived Without Internet for a Year?", "Kalau kamu hidup tanpa internet selama setahun", 0], [8, "What If You Lived in a Tiny House?", "Kalau kamu tinggal di rumah mungil", 0], [8, "What If You Lived on a Boat for a Year?", "Kalau kamu hidup di atas perahu selama setahun", 0], [8, "What If You Lived in the Forest for 30 Days?", "Kalau kamu tinggal di hutan selama 30 hari", 0], [8, "What If You Were Stranded on a Deserted Island?", "Kalau kamu terdampar di pulau terpencil", 0], [8, "What If You Got Lost in the Desert?", "Kalau kamu tersesat di gurun", 0], [8, "What If You Were Stuck in an Elevator for 24 Hours?", "Kalau kamu terjebak di lift selama 24 jam", 0], [8, "What If You Got Locked in a Supermarket Overnight?", "Kalau kamu terkunci di supermarket semalaman", 0], [8, "What If You Woke Up in the Year 3000?", "Kalau kamu bangun tidur di tahun 3000", 0], [8, "What If You Won the Lottery Tomorrow?", "Kalau kamu menang lotre besok", 0], [8, "What If You Lost Everything You Owned?", "Kalau kamu kehilangan semua yang kamu punya", 0], [8, "What If You Had Unlimited Money for One Day?", "Kalau kamu punya uang tanpa batas selama sehari", 0], [8, "What If You Never Lost Anything Again?", "Kalau kamu gak pernah kehilangan barang lagi", 0], [8, "What If You Could Rewind Your Day?", "Kalau kamu bisa memutar ulang harimu", 0], [8, "What If You Repeated the Same Day 1,000 Times?", "Kalau kamu mengulang hari yang sama 1.000 kali", 0], [8, "What If You Could Speak Every Language?", "Kalau kamu bisa bicara semua bahasa", 0], [8, "What If You Learned to Speed Read?", "Kalau kamu belajar baca cepat", 0], [8, "What If You Took a One-Year Break From Work?", "Kalau kamu cuti dari kerja selama setahun", 0], [8, "What If You Worked Only 2 Hours a Day?", "Kalau kamu kerja cuma 2 jam sehari", 0], [8, "What If You Quit Your Job Tomorrow?", "Kalau kamu resign besok", 0], [8, "What If You Studied 8 Hours a Day for a Year?", "Kalau kamu belajar 8 jam sehari selama setahun", 0], [8, "What If You Planted a Tree Every Day?", "Kalau kamu menanam pohon tiap hari", 0], [8, "What If You Stopped Wearing Shoes for a Year?", "Kalau kamu berhenti pakai sepatu selama setahun", 0], [8, "What If You Wore the Same Outfit for 30 Days?", "Kalau kamu pakai baju yang sama selama 30 hari", 0], [8, "What If You Never Shopped Online Again?", "Kalau kamu gak pernah belanja online lagi", 0], [8, "What If You Smiled at Everyone for 30 Days?", "Kalau kamu senyum ke semua orang selama 30 hari", 0], [9, "What If Zombies Took Over the World?", "Kalau zombie menguasai dunia", 0], [9, "What If a Giant Monster Attacked Your City?", "Kalau monster raksasa menyerang kotamu", 0], [9, "What If Aliens Invaded Earth?", "Kalau alien menyerbu Bumi", 0], [9, "What If the Entire Earth Was on Fire?", "Kalau seluruh Bumi terbakar", 0], [9, "What If Gravity Reversed?", "Kalau gravitasi berbalik arah", 0], [9, "What If the Ground Turned Into Jelly?", "Kalau tanah berubah jadi jeli", 0], [9, "What If It Rained Money?", "Kalau hujan uang", 0], [9, "What If It Rained Candy?", "Kalau hujan permen", 0], [9, "What If the Ocean Was Made of Soda?", "Kalau lautan terbuat dari soda", 0], [9, "What If Everything Was Made of Chocolate?", "Kalau semuanya terbuat dari cokelat", 0], [9, "What If the Moon Was Made of Cheese?", "Kalau Bulan terbuat dari keju", 0], [9, "What If a Giant Meteor Was One Hour Away?", "Kalau meteor raksasa tinggal satu jam lagi", 0], [9, "What If the World Ended in 24 Hours?", "Kalau dunia kiamat 24 jam lagi", 0], [9, "What If You Were the Last Person on Earth?", "Kalau kamu orang terakhir di Bumi", 0], [9, "What If Humans Disappeared Tomorrow?", "Kalau manusia menghilang besok", 0], [9, "What If Nature Took Back Our Cities in 100 Years?", "Kalau alam merebut kembali kota kita dalam 100 tahun", 0], [9, "What If a Mega Earthquake Split a Continent?", "Kalau gempa mega membelah sebuah benua", 0], [9, "What If a Mile-High Tsunami Hit the Coast?", "Kalau tsunami setinggi 1,6 km menghantam pantai", 0], [9, "What If a Giant Hole Opened Under Your City?", "Kalau lubang raksasa terbuka di bawah kotamu", 0], [9, "What If You Woke Up as a Giant?", "Kalau kamu bangun jadi raksasa", 0], [9, "What If You Woke Up Inside a Video Game?", "Kalau kamu bangun di dalam video game", 0], [9, "What If You Woke Up in Someone Else's Body?", "Kalau kamu bangun di tubuh orang lain", 0], [9, "What If Dreams Became Reality?", "Kalau mimpi jadi kenyataan", 0], [9, "What If You Never Woke Up From a Dream?", "Kalau kamu gak pernah bangun dari mimpi", 0], [9, "What If Humans Had Wings?", "Kalau manusia punya sayap", 0], [9, "What If Humans Could Hibernate?", "Kalau manusia bisa hibernasi", 0], [9, "What If Humans Lived Underwater?", "Kalau manusia hidup di bawah air", 0], [9, "What If Humans Lived in Space Permanently?", "Kalau manusia hidup permanen di luar angkasa", 0], [9, "What If Everyone Became Invisible?", "Kalau semua orang jadi tak terlihat", 0], [9, "What If Everyone Could Teleport?", "Kalau semua orang bisa teleportasi", 0], [9, "What If Everyone Could Fly?", "Kalau semua orang bisa terbang", 0], [9, "What If Magic Was Real?", "Kalau sihir itu nyata", 0], [9, "What If Dragons Were Real?", "Kalau naga itu nyata", 0], [9, "What If Mermaids Were Real?", "Kalau putri duyung itu nyata", 0], [9, "What If Superheroes Were Real?", "Kalau superhero itu nyata", 0], [9, "What If Giants Walked the Earth?", "Kalau raksasa berjalan di Bumi", 0], [9, "What If a Time Loop Trapped the Whole World?", "Kalau lingkaran waktu menjebak seluruh dunia", 0], [9, "What If Earth Became a Giant Ball of Ice?", "Kalau Bumi jadi bola es raksasa", 0], [9, "What If Earth Turned Into Venus?", "Kalau Bumi berubah jadi seperti Venus", 0], [9, "What If Earth Turned Into Mars?", "Kalau Bumi berubah jadi seperti Mars", 0], [9, "What If a Black Hole the Size of a Pea Hit Earth?", "Kalau lubang hitam sebesar kacang polong menabrak Bumi", 0], [9, "What If Everyone Lost Their Memory Tomorrow?", "Kalau semua orang kehilangan ingatan besok", 0], [9, "What If Sleep Became Impossible for Everyone?", "Kalau tidur jadi mustahil bagi semua orang", 0], [9, "What If You Could Only Eat One Food Forever?", "Kalau kamu cuma boleh makan satu makanan selamanya", 0], [9, "What If the Sky Turned Red Forever?", "Kalau langit berwarna merah selamanya", 0], [9, "What If the Sun Never Rose Again?", "Kalau Matahari gak pernah terbit lagi", 0], [9, "What If the Entire Ocean Froze?", "Kalau seluruh lautan membeku", 0], [9, "What If You Were Caught in a Tornado?", "Kalau kamu terjebak di dalam tornado", 0], [9, "What If Gravity Pulled Sideways?", "Kalau gravitasi menarik ke samping", 0], [9, "What If Everything Doubled in Size?", "Kalau semuanya jadi dua kali lebih besar", 0]];
+const KEY = 'whatif500.progress.v1';
+const TOTAL = ITEMS.length;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pad = n => String(n).padStart(3, '0');
+const fmtDate = ts => new Date(ts).toLocaleDateString('id-ID', {day:'numeric', month:'short', year:'numeric'});
+
+/* ---------- state ---------- */
+const defaults = () => ({done:{}, theme:'dark', showId:true, collapsed:{}});
+let S = defaults();
+try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(defaults(), JSON.parse(raw)); } catch(e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e) {} };
+const view = {f:'all', cat:'all', q:''};
+const data = ITEMS.map((a, i) => ({id:i+1, c:a[0], en:a[1], idn:a[2], o:a[3]}));
+const doneCount = () => Object.keys(S.done).length;
+
+/* ---------- build ---------- */
+function cardHTML(x){
+  const rest = x.en.replace(/^What If\s+/, '');
+  return `<article class="card" data-id="${x.id}" data-c="${x.c}" data-q="${esc((x.en+' '+x.idn).toLowerCase())}">
+    <div class="card-top"><span class="num">#${pad(x.id)}</span>${x.o ? '<span class="badge">★ judul awal</span>' : ''}</div>
+    <h3 class="en"><span class="wi">What If</span>${esc(rest)}</h3>
+    <p class="idn">${esc(x.idn)}</p>
+    <div class="card-foot">
+      <button class="copy" data-a="copy" title="Salin judul" aria-label="Salin judul">⧉</button>
+      <button class="mark" data-a="mark" aria-pressed="false">
+        <span class="box"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span class="lbl"><span class="t">Belum diposting</span><small></small></span>
+      </button>
+    </div>
+    <div class="stamp">TAYANG</div>
+  </article>`;
+}
+function build(){
+  $('#list').innerHTML = CATS.map((cat, ci) => `
+    <section class="cat" data-c="${ci}" style="--c:${cat.color}">
+      <button class="cat-head" aria-expanded="true">
+        <span class="emo">${cat.emo}</span>
+        <span class="cat-title"><span class="cat-name">${esc(cat.name)}</span><span class="cat-sub">${esc(cat.sub)}</span></span>
+        <span class="cat-cnt"></span><span class="chev">▾</span>
+      </button>
+      <div class="mini"><i></i></div>
+      <div class="grid">${data.filter(x => x.c === ci).map(cardHTML).join('')}</div>
+    </section>`).join('');
+  $('#chips').innerHTML =
+    `<button class="chip" data-cat="all" aria-pressed="true" style="--c:var(--accent)"><span class="emo">✨</span>Semua<span class="n"></span><i class="bar"></i></button>` +
+    CATS.map((c, i) => `<button class="chip" data-cat="${i}" aria-pressed="false" style="--c:${c.color}"><span class="emo">${c.emo}</span>${esc(c.name)}<span class="n"></span><i class="bar"></i></button>`).join('');
+}
+
+/* ---------- refresh ---------- */
+function refresh(){
+  const q = view.q.trim().toLowerCase();
+  let shown = 0, dn = doneCount();
+  const per = CATS.map(() => ({d:0, t:0}));
+  $$('.card').forEach(card => {
+    const id = +card.dataset.id, c = +card.dataset.c, isDone = !!S.done[id];
+    per[c].t++; if (isDone) per[c].d++;
+    const ok = (view.f === 'all' || (view.f === 'done') === isDone)
+            && (view.cat === 'all' || +view.cat === c)
+            && (!q || card.dataset.q.includes(q));
+    card.hidden = !ok; if (ok) shown++;
+    card.classList.toggle('done', isDone);
+    const m = $('.mark', card);
+    m.setAttribute('aria-pressed', isDone);
+    $('.t', m).textContent = isDone ? 'Sudah diposting' : 'Belum diposting';
+    $('small', m).textContent = isDone ? fmtDate(S.done[id]) : '';
+  });
+  $$('.cat').forEach(sec => {
+    const c = +sec.dataset.c, any = $$('.card:not([hidden])', sec).length > 0;
+    sec.hidden = !any;
+    sec.classList.toggle('collapsed', !!S.collapsed[c]);
+    $('.cat-head', sec).setAttribute('aria-expanded', !S.collapsed[c]);
+    $('.cat-cnt', sec).innerHTML = `<b>${per[c].d}</b> / ${per[c].t}`;
+    $('.mini i', sec).style.width = (per[c].d / per[c].t * 100) + '%';
+  });
+  $$('.chip').forEach(ch => {
+    const k = ch.dataset.cat, p = k === 'all' ? {d:dn, t:TOTAL} : per[+k];
+    $('.n', ch).textContent = `${p.d}/${p.t}`;
+    $('.bar', ch).style.width = (p.d / p.t * 100) + '%';
+    ch.setAttribute('aria-pressed', String(String(view.cat) === k));
+  });
+  $('#cAll').textContent = TOTAL; $('#cTodo').textContent = TOTAL - dn; $('#cDone').textContent = dn;
+  $$('#seg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.f === view.f));
+  const pct = dn / TOTAL * 100;
+  $('#doneBig').textContent = dn; $('#totalBig').textContent = TOTAL;
+  $('#pct').textContent = (pct % 1 ? pct.toFixed(1) : pct) + '%';
+  $('#left').textContent = TOTAL - dn;
+  $('#fill').style.width = pct + '%';
+  $('#walker').style.left = `clamp(15px, ${pct}%, calc(100% - 30px))`;
+  const wk = Math.ceil((TOTAL - dn) / 7);
+  $('#eta').innerHTML = dn === TOTAL ? '<b class="ok">🎉 Semua tayang!</b>' : `Kalau 1 video/hari: <b>${wk} minggu</b> lagi`;
+  $('#shown').textContent = shown === TOTAL ? '' : `${shown} judul ditampilkan`;
+  $('#empty').classList.toggle('show', shown === 0);
+  $('#idLbl').textContent = S.showId ? 'Sembunyikan terjemahan' : 'Tampilkan terjemahan';
+  document.body.classList.toggle('hide-id', !S.showId);
+}
+function setTheme(t){
+  S.theme = t; document.documentElement.dataset.theme = t;
+  $('#themeBtn').textContent = t === 'dark' ? '🌙' : '☀️';
+  $('meta[name=theme-color]').content = t === 'dark' ? '#14151a' : '#f5efdc';
+}
+
+/* ---------- actions ---------- */
+function toggle(id, silent){
+  const was = !!S.done[id];
+  if (was) delete S.done[id]; else S.done[id] = Date.now();
+  save(); refresh();
+  if (!was) {
+    const n = doneCount();
+    if (n === TOTAL) { burst(260); toast('🏆 500/500! Semua judul sudah tayang!'); }
+    else if (n % 50 === 0) { burst(160); toast(`🎉 ${n} judul tayang! Mantap!`); }
+    else if (!silent) toast('✓ Ditandai sudah tayang', 'Batalkan', () => toggle(id, true));
+  } else if (!silent) toast('Tanda dibatalkan', 'Ulangi', () => toggle(id, true));
+}
+function copyText(t, msg){
+  const done = () => toast(msg || '⧉ Judul disalin');
+  if (navigator.clipboard && window.isSecureContext !== false) navigator.clipboard.writeText(t).then(done, fallback);
+  else fallback();
+  function fallback(){ const a = document.createElement('textarea'); a.value = t; a.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); done(); } catch(e) { toast('Gagal menyalin'); } a.remove(); }
+}
+function toast(msg, label, fn, ms){
+  const el = document.createElement('div'); el.className = 'toast'; el.textContent = msg;
+  if (label) { const b = document.createElement('button'); b.textContent = label; b.onclick = () => { el.remove(); fn(); }; el.appendChild(b); }
+  const box = $('#toasts'); while (box.children.length >= 1) box.firstChild.remove();
+  box.appendChild(el); setTimeout(() => el.remove(), ms || (label ? 5200 : 2400));
+}
+function goTo(id){
+  let changed = false;
+  if (view.f !== 'all' || view.cat !== 'all' || view.q) { view.f = 'all'; view.cat = 'all'; view.q = ''; $('#q').value = ''; $('#searchBox').classList.remove('has'); changed = true; }
+  const x = data.find(d => d.id === id);
+  if (S.collapsed[x.c]) { delete S.collapsed[x.c]; changed = true; }
+  if (changed) { save(); refresh(); }
+  const card = $(`.card[data-id="${id}"]`);
+  card.scrollIntoView({behavior:'smooth', block:'center'});
+  card.classList.remove('flash'); void card.offsetWidth; card.classList.add('flash');
+}
+
+/* ---------- random picker ---------- */
+let pick = null;
+function rollPick(){
+  let pool = data.filter(x => !S.done[x.id] && (view.cat === 'all' || x.c === +view.cat));
+  if (!pool.length) pool = data.filter(x => !S.done[x.id]);
+  if (!pool.length) { toast('🎉 Semua judul sudah tayang!'); return null; }
+  let x; do { x = pool[Math.floor(Math.random() * pool.length)]; } while (pool.length > 1 && pick && x.id === pick.id);
+  return x;
+}
+function showPick(x){
+  pick = x; if (!x) return;
+  const cat = CATS[x.c];
+  $('#sheet').style.setProperty('--c', cat.color);
+  $('#mTag').textContent = `${cat.emo} ${cat.name} · #${pad(x.id)}`;
+  $('#mTitle').innerHTML = `<span class="wi">What If</span>${esc(x.en.replace(/^What If/, ''))}`;
+  $('#mId').textContent = x.idn;
+  $('#modal').classList.add('open');
+}
+const closeModal = () => $('#modal').classList.remove('open');
+
+/* ---------- backup ---------- */
+function exportData(){
+  const blob = new Blob([JSON.stringify({app:'whatif500', version:1, exportedAt:new Date().toISOString(), done:S.done}, null, 2)], {type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = `progres-whatif500-${new Date().toISOString().slice(0,10)}.json`; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000); toast('💾 File cadangan diunduh');
+}
+function importData(file){
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const j = JSON.parse(r.result); if (j.app !== 'whatif500' || typeof j.done !== 'object') throw 0;
+      const clean = {}; Object.entries(j.done).forEach(([k, v]) => { if (+k >= 1 && +k <= TOTAL) clean[k] = +v || Date.now(); });
+      if (!confirm(`Pulihkan ${Object.keys(clean).length} judul yang sudah tayang? Tanda saat ini akan diganti.`)) return;
+      S.done = clean; save(); refresh(); toast('📂 Progres dipulihkan');
+    } catch(e) { toast('File tidak valid'); }
+  };
+  r.readAsText(file);
+}
+
+/* ---------- confetti ---------- */
+const cv = $('#fx'), cx = cv.getContext('2d'); let parts = [], raf = 0;
+function burst(n){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio;
+  const cols = ['#ffd23f','#5ef2c0','#ff8fab','#7c9cff','#ffffff','#ffa94d'];
+  for (let i = 0; i < n; i++) parts.push({x:cv.width/2, y:cv.height*.4, vx:(Math.random()-.5)*22*devicePixelRatio, vy:(Math.random()-.9)*20*devicePixelRatio, r:Math.random()*7+4, c:cols[i%cols.length], a:Math.random()*6, va:(Math.random()-.5)*.4, life:1});
+  if (!raf) raf = requestAnimationFrame(tick);
+}
+function tick(){
+  cx.clearRect(0, 0, cv.width, cv.height);
+  parts.forEach(p => { p.vy += .55*devicePixelRatio; p.x += p.vx; p.y += p.vy; p.vx *= .99; p.a += p.va; p.life -= .009;
+    cx.save(); cx.globalAlpha = Math.max(p.life, 0); cx.translate(p.x, p.y); cx.rotate(p.a); cx.fillStyle = p.c; cx.fillRect(-p.r, -p.r/2, p.r*2, p.r); cx.restore(); });
+  parts = parts.filter(p => p.life > 0 && p.y < cv.height + 40);
+  raf = parts.length ? requestAnimationFrame(tick) : (cx.clearRect(0, 0, cv.width, cv.height), 0);
+}
+
+/* ---------- events ---------- */
+build(); setTheme(S.theme); refresh();
+
+$('#list').addEventListener('click', e => {
+  const head = e.target.closest('.cat-head');
+  if (head) { const c = +head.parentElement.dataset.c; S.collapsed[c] = !S.collapsed[c]; save(); refresh(); return; }
+  const b = e.target.closest('[data-a]'); if (!b) return;
+  const card = b.closest('.card'), id = +card.dataset.id, x = data[id - 1];
+  if (b.dataset.a === 'mark') toggle(id);
+  else copyText(x.en);
+});
+$('#chips').addEventListener('click', e => {
+  const ch = e.target.closest('.chip'); if (!ch) return;
+  view.cat = ch.dataset.cat === 'all' ? 'all' : +ch.dataset.cat;
+  if (view.cat !== 'all') delete S.collapsed[view.cat];
+  refresh();
+});
+$('#seg').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { view.f = b.dataset.f; refresh(); } });
+let tmr;
+$('#q').addEventListener('input', e => { view.q = e.target.value; $('#searchBox').classList.toggle('has', !!view.q); clearTimeout(tmr); tmr = setTimeout(refresh, 90); });
+$('#clr').addEventListener('click', () => { $('#q').value = ''; view.q = ''; $('#searchBox').classList.remove('has'); refresh(); $('#q').focus(); });
+$('#themeBtn').addEventListener('click', () => { setTheme(S.theme === 'dark' ? 'light' : 'dark'); save(); });
+$('#menuBtn').addEventListener('click', e => { e.stopPropagation(); $('#menuPop').classList.toggle('open'); });
+document.addEventListener('click', e => { if (!e.target.closest('.menu')) $('#menuPop').classList.remove('open'); });
+$('#menuPop').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return; $('#menuPop').classList.remove('open');
+  const a = b.dataset.act;
+  if (a === 'toggleId') { S.showId = !S.showId; save(); refresh(); }
+  else if (a === 'collapseAll') { const all = CATS.every((_, i) => S.collapsed[i]); CATS.forEach((_, i) => S.collapsed[i] = !all); save(); refresh(); }
+  else if (a === 'copyTodo') { const t = data.filter(x => !S.done[x.id]).map(x => `${pad(x.id)}. ${x.en} (${x.idn})`).join('\n'); copyText(t, '📋 Daftar belum tayang disalin'); }
+  else if (a === 'export') exportData();
+  else if (a === 'import') $('#file').click();
+  else if (a === 'install') installApp();
+  else if (a === 'reset') { if (doneCount() && confirm('Hapus SEMUA tanda sudah-tayang? Sebaiknya cadangkan dulu.')) { S.done = {}; save(); refresh(); toast('Semua tanda direset'); } }
+});
+$('#file').addEventListener('change', e => { if (e.target.files[0]) importData(e.target.files[0]); e.target.value = ''; });
+$('#fab').addEventListener('click', () => showPick(rollPick()));
+$('#mAgain').addEventListener('click', () => showPick(rollPick()));
+$('#mClose').addEventListener('click', closeModal);
+$('#modal').addEventListener('click', e => { if (e.target.id === 'modal') closeModal(); });
+$('#mDone').addEventListener('click', () => { if (pick) { if (!S.done[pick.id]) toggle(pick.id, true); toast('✓ Ditandai sudah tayang'); } closeModal(); });
+$('#mCopy').addEventListener('click', () => pick && copyText(pick.en));
+$('#mGo').addEventListener('click', () => { const id = pick.id; closeModal(); setTimeout(() => goTo(id), 60); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal(); $('#menuPop').classList.remove('open'); }
+  if (e.key === '/' && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) { e.preventDefault(); $('#q').focus(); }
+});
+
+/* ---------- PWA ---------- */
+let deferredPrompt = null, updating = false;
+const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+function syncInstall(){ const show = !standalone && (!!deferredPrompt || isIOS); $('#installBtn').hidden = !show; $('#installHr').hidden = !show; }
+function installApp(){
+  if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.finally(() => { deferredPrompt = null; syncInstall(); }); }
+  else toast('iPhone/iPad: ketuk tombol Bagikan lalu pilih “Tambah ke Layar Utama”', 'OK', () => {}, 9000);
+}
+addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; syncInstall(); });
+addEventListener('appinstalled', () => { deferredPrompt = null; syncInstall(); toast('📲 Aplikasi terpasang'); });
+syncInstall();
+if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+  addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      const ask = w => toast('✨ Versi baru siap dipakai', 'Perbarui', () => { updating = true; w.postMessage('SKIP_WAITING'); }, 60000);
+      if (reg.waiting && navigator.serviceWorker.controller) ask(reg.waiting);
+      reg.addEventListener('updatefound', () => {
+        const w = reg.installing; if (!w) return;
+        w.addEventListener('statechange', () => { if (w.state === 'installed' && navigator.serviceWorker.controller) ask(w); });
+      });
+    }).catch(() => {});
+    navigator.serviceWorker.addEventListener('controllerchange', () => { if (updating) location.reload(); });
+  });
+}
+if (new URLSearchParams(location.search).has('acak')) showPick(rollPick());
+</script>
+</body>
+</html>

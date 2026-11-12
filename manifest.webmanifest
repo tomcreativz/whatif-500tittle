@@ -1,0 +1,29 @@
+{
+  "id": "./",
+  "name": "500 Ide Konten What If",
+  "short_name": "WhatIf 500",
+  "description": "500 ide judul video format What If (Bagaimana jika) dengan terjemahan Indonesia dan penanda sudah diposting.",
+  "lang": "id",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#14151a",
+  "theme_color": "#14151a",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {
+      "name": "Acak judul",
+      "short_name": "Acak",
+      "description": "Pilih satu judul yang belum tayang secara acak",
+      "url": "./?acak=1",
+      "icons": [{"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"}]
+    }
+  ]
+}
