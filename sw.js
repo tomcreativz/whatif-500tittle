@@ -1,6 +1,6 @@
 /* Service worker · 500 Ide What If
    VERSION otomatis berubah setiap build, sehingga cache lama dibersihkan. */
-const VERSION = '26ddcdb68e';
+const VERSION = 'f24012d87e';
 const CORE = 'whatif500-core-' + VERSION;
 const RUNTIME = 'whatif500-runtime';
 const ASSETS = [

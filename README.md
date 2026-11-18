@@ -26,6 +26,14 @@ Semua path di dalam aplikasi sudah relatif, jadi aman di alamat subfolder sepert
 Setiap kali kamu mengubah file dan push ke GitHub, pengguna yang membuka aplikasi akan melihat pesan **"Versi baru siap dipakai → Perbarui"**.
 Jika kamu hanya mengubah `index.html`, ubah juga angka `VERSION` di `sw.js` (isi apa saja yang baru, mis. `'v2'`) supaya cache lama diganti.
 
+## Deskripsi video
+Setiap judul punya deskripsi YouTube berbahasa Inggris (kalimat pembuka + teaser singkat).
+- Di kartu judul, ketuk **📝 Deskripsi video** untuk membuka, lalu **Salin deskripsi lengkap**.
+- Hasil salinan sudah berisi ajakan subscribe dan hashtag sesuai tema (`#WhatIf #TemaVideo #StickKaboomology`).
+- Menu ⋯ → **Atur link channel untuk deskripsi** supaya link channelmu ikut tertulis di ajakan subscribe.
+- Menu ⋯ → **Unduh semua deskripsi (.txt)** mengunduh seluruh 500 deskripsi dalam satu file.
+- Link channel disimpan di browser dan ikut tercadangkan lewat *Cadangkan progres*.
+
 ## Tentang data progres
 - Tanda "sudah tayang" disimpan di browser (localStorage), bukan di server.
 - Laptop, HP, dan aplikasi terpasang di iPhone punya penyimpanan **terpisah**. Pindahkan lewat menu ⋯ → *Cadangkan progres* lalu *Pulihkan progres*.
